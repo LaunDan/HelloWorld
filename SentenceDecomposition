@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class TextString 
+{
+    public static void main(String[] args)
+    {
+    Scanner sc = new Scanner(System.in, "Windows-1250");
+    System.out.println("Enter sentence for decomposition to vowels, consonants and others characters:");
+    String s = sc.nextLine();
+    System.out.println(s);
+    s = s.toLowerCase();
+    
+    int aVowels = 0;
+    int aConsonants = 0;
+    
+    String vowels = "aeiouy";
+    String consonants = "qwrtpsdfghjklzxcvbnm";
+    for (char c : s.toCharArray())
+    {
+        if (vowels.contains(String.valueOf(c)))
+        {
+            aVowels++;
+        }
+        else if (consonants.contains(String.valueOf(c)))
+        {
+            aConsonants++;
+        }
+    }
+    System.out.printf("Amount of vowels is %d\n", aVowels);
+    System.out.printf("Amount of consonants is %d\n", aConsonants);
+    System.out.printf("Amount of others characters is %d\n", s.length() - (aVowels + aConsonants));
+    }
+}
