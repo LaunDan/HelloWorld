@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class ASCII 
+{
+    public static void main(String[] args)
+    {
+        Scanner cs = new Scanner(System.in, "Windows-1250");
+        System.out.println("Enter sentence for encryption (without spaces and other characters):");
+        String s = cs.nextLine();
+        String mess = "";
+        int change = 1;
+        for (char c : s.toCharArray())
+        {
+            int i = (int)c;
+            i += change;
+            char character = (char)i;
+            mess += character;
+        }
+        System.out.printf("Encryption message: %s\n", mess);
+    }
+    
+    
+}
