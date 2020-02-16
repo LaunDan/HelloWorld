@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class Field 
+{
+    public static void main(String[] args)
+    {
+      Scanner sc = new Scanner(System.in, "Windows-1250");
+      System.out.println("Hi, I'll calculate the average of your grades. How many numbers do you want enter?");
+      int amount = Integer.parseInt(sc.nextLine());
+      float[] numbers = new float[amount];
+      for (int i = 0; i < amount; i++)
+      {
+          System.out.printf("Enter %d. number: ", i + 1);
+          numbers[i] = Float.parseFloat(sc.nextLine());
+      }
+      int sum = 0;
+      for (float i: numbers)
+      {
+          sum += i;
+      }
+      float average = sum / (float)numbers.length;
+      System.out.printf("Average of your grades is %f", average);
+      
+    }
+}
