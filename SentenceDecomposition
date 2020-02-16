@@ -6,7 +6,6 @@ public class TextString
     Scanner sc = new Scanner(System.in, "Windows-1250");
     System.out.println("Enter sentence for decomposition to vowels, consonants and others characters:");
     String s = sc.nextLine();
-    System.out.println(s);
     s = s.toLowerCase();
     
     int aVowels = 0;
