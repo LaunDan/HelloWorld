@@ -20,6 +20,20 @@ public class ASCII
             mess += character;
         }
         System.out.printf("Encryption message: %s\n", mess);
+        String mes = "";
+        for (char p : mess.toCharArray())
+        {
+            int j = (int)p;
+            j -= change;
+            if (j < (int)'a')
+            {
+                j+=26;
+            }
+            char characterb = (char)j;
+            mes += characterb;
+            
+        }
+        System.out.printf("Unencryption message: %s\n", mes);
     }
     
     
