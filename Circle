@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Example3 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in, "Windows-1250");
+        System.out.println("Enter the radius of the circle [cm]");
+        float a = Float.parseFloat(sc.nextLine());
+        float circuit = a * 2 * 3.1415F;
+        float content = a * a * 3.1415F;
+        System.out.println("Circuit of the circle is " + circuit + "m*10^-2");
+        System.out.println("Content of the circle is " + content + "m^2*10^-4");
+    }
+}
