@@ -6,6 +6,7 @@ public class ASCII
         Scanner cs = new Scanner(System.in, "Windows-1250");
         System.out.println("Enter sentence for encryption (without spaces and other characters):");
         String s = cs.nextLine();
+        s = s.toLowerCase();
         String mess = "";
         int change = 1;
         for (char c : s.toCharArray())
@@ -38,3 +39,4 @@ public class ASCII
     
     
 }
+
