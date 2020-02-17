@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class ASCIIb 
+{
+    public static void main(String[] args)
+    {
+    Scanner sc = new Scanner(System.in, "Windows-1250");
+    System.out.println("Enter sentense for convert to Morse code:");
+    String s = sc.nextLine();
+    s = s.toLowerCase(); 
+    
+    String morseCode = "";
+    String alphabet = "abcdefghijklmnopqrstuvwxyz ";
+    String[] morse = {".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....",
+"..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-",
+"...-", ".--", "-..-", "-.--", "--..", " "};
+    for (char alphabetChar : s.toCharArray())
+    {
+    String charac = " ";
+    int index = -1;
+    for (int i = 0; i < alphabet.length(); i++)
+    {
+        if (alphabet.charAt(i) == alphabetChar)
+            index = i;
+    }
+    if (index >= 0)
+    {
+      charac = morse[index];  
+    }
+    morseCode += charac + " ";
+    }
+    System.out.printf("Converted message: %s\n", morseCode);
+    
+    
+}
+}
