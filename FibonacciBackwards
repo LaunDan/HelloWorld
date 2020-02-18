@@ -1,0 +1,38 @@
+import java.util.*;
+public class SpecChar 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in, "Windows-1250");
+        System.out.println("Prints Fibonacci sequence numbers backwards from the specified limit\nEnter limit: ");
+        int x = Integer.parseInt(sc.nextLine());
+
+        List<Integer> fib = new ArrayList<Integer>();
+
+        
+        if (x >= 0) 
+            fib.add(0);
+        if (x >= 1) 
+            fib.add(1);
+        int i = 2;
+        int number;
+
+        do
+        {
+            number = fib.get(i - 1) + fib.get(i - 2);
+            if (number <= x) 
+                fib.add(number);
+            i++;
+        } while (number <= x);
+
+        Collections.reverse(fib); 
+
+        
+        for (int a : fib)
+        {
+            System.out.printf("%d, ", a);
+        }
+
+        System.out.println();
+    }
+}
