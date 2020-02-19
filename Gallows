@@ -1,116 +1,124 @@
 import java.util.Scanner;
-public class Gallows 
-{
-    public static void main(String[] args)
-    {
+
+public class Gallows {
+
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in, "Windows-1250");
-        int pen = 0;
-        int win = 0;
-        String[] database = {"car", "telephone", "lion", "girlfriend", "mouse", "dog", "launisthegod", "lamp", "bus", "computer", "dragon"};
-        String word = database[(int)(Math.random() * database.length)];
-        char[] progress = new char[word.length()];
-        for (int i = 0; i !=word.length(); i++)
-        {
-            progress[i] = '-';
+        System.out.println("Welcome in game Gallows.\nYou can be mistaken 7 times, after that you lose!");
+        String repeat = "yes";
+        while ("yes".equals(repeat)) {
+            int pen = 0;
+            int win = 0;
+
+            String[] database = {"car", "telephone", "lion", "girlfriend", "mouse", "dog", "laun", "lamp", "bus", "computer", "dragon", "fire", "water", "thing", "sun", "paper", "pickle"};
+            String word = database[(int) (Math.random() * database.length)];
+            char[] progress = new char[word.length()];
+            for (int i = 0; i != word.length(); i++) {
+                progress[i] = '-';
+            }
+
+            while (pen != 7 && win != word.length()) {
+                System.out.println("Your wanted word:");
+                for (char c : progress) {
+                    System.out.printf("%c", c);
+                }
+                System.out.printf("\nEnter letter: ");
+                String choose = sc.nextLine();
+                choose = choose.toLowerCase();
+
+                if (word.contains(choose)) {
+                    for (int i = 0; i != word.length(); i++) {
+                        if (choose.equals(Character.toString(word.charAt(i))) && progress[i] != word.charAt(i)) {
+                            progress[i] = word.charAt(i);
+                            win += 1;
+                        }
+                    }
+                } else {
+                    pen += 1;
+                }
+
+                switch (pen) {
+                    case 7:
+                        System.out.println("      ___________\n"
+                                + "     ||        I\n"
+                                + "     ||       ( )\n"
+                                + "     ||        |\n"
+                                + "     ||       /|\\\n"
+                                + "     ||        |\n"
+                                + "     ||       / \\\n"
+                                + "    .---.\n"
+                                + "   /     \\");
+                        System.out.println("You lost!\n" + "The search word was: " + word);
+
+                        break;
+                    case 6:
+                        System.out.println("      ___________\n"
+                                + "     ||        I\n"
+                                + "     ||       ( )\n"
+                                + "     ||        |\n"
+                                + "     ||        |\n"
+                                + "     ||        |\n"
+                                + "     ||       / \\\n"
+                                + "    .---.\n"
+                                + "   /     \\");
+                        break;
+                    case 5:
+                        System.out.println("      ___________\n"
+                                + "     ||        I\n"
+                                + "     ||       ( )\n"
+                                + "     ||        |\n"
+                                + "     ||        |\n"
+                                + "     ||        |\n"
+                                + "     ||\n"
+                                + "    .---.\n"
+                                + "   /     \\");
+                        break;
+                    case 4:
+                        System.out.println("      ___________\n"
+                                + "     ||        I\n"
+                                + "     ||       ( )\n"
+                                + "     ||\n"
+                                + "     ||\n"
+                                + "     ||\n"
+                                + "     ||\n"
+                                + "    .---.\n"
+                                + "   /     \\");
+                        break;
+                    case 3:
+                        System.out.println("      ___________\n"
+                                + "     ||        I\n"
+                                + "     ||\n"
+                                + "     ||\n"
+                                + "     ||\n"
+                                + "     ||\n"
+                                + "     ||\n"
+                                + "    .---.\n"
+                                + "   /     \\");
+                        break;
+                    case 2:
+                        System.out.println("\n     ||\n"
+                                + "     ||\n"
+                                + "     ||\n"
+                                + "     ||\n"
+                                + "     ||\n"
+                                + "     ||\n"
+                                + "    .---.\n"
+                                + "   /     \\");
+                        break;
+                    case 1:
+                        System.out.println("\n\n\n\n\n\n\n    .---.\n"
+                                + "   /     \\");
+                        break;
+                    default:
+                }
+            }
+            if (pen != 7) {
+                System.out.println("You win!");
+            }
+            System.out.println("Do you want to play again? [yes/no]");
+            repeat = sc.nextLine();
+            repeat = repeat.toLowerCase();
         }
-        while (pen != 7&&win != word.length())
-        {
-           for (char c : progress)
-               System.out.printf("%c", c);
-           System.out.printf("\nEnter letter: ");
-           String choose = sc.nextLine();
-           choose = choose.toLowerCase();
-           
-           if (word.contains(choose))
-           {
-               for (int i = 0; i != word.length(); i++)
-                   if (choose.equals(Character.toString(word.charAt(i))) && progress[i] != word.charAt(i))
-               {
-                   progress[i] = word.charAt(i);
-                   win += 1;
-               }
-           }
-           else
-               pen += 1;
-        
-        switch (pen)
-{
-  case 7:
-      System.out.println("      ___________\n"
-                       + "     ||        I\n"
-                       + "     ||       ( )\n"
-                       + "     ||        |\n"
-                       + "     ||       /|\\\n"
-                       + "     ||        |\n"
-                       + "     ||       / \\\n"
-                       + "    .---.\n"
-                       + "   /     \\");
-      System.out.println("You lost!\n"+ "The search word was: " + word);
-               
-      break;
-  case 6:
-      System.out.println("      ___________\n"
-                       + "     ||        I\n"
-                       + "     ||       ( )\n"
-                       + "     ||        |\n"
-                       + "     ||        |\n"
-                       + "     ||        |\n"
-                       + "     ||       / \\\n"
-                       + "    .---.\n"
-                       + "   /     \\");
-      break;
-  case 5:
-      System.out.println("      ___________\n"
-                       + "     ||        I\n"
-                       + "     ||       ( )\n"
-                       + "     ||        |\n"
-                       + "     ||        |\n"
-                       + "     ||        |\n"
-                       + "     ||\n"
-                       + "    .---.\n"
-                       + "   /     \\");
-      break;
-  case 4:
-      System.out.println("      ___________\n"
-                       + "     ||        I\n"
-                       + "     ||       ( )\n"
-                       + "     ||\n"
-                       + "     ||\n"
-                       + "     ||\n"
-                       + "     ||\n"
-                       + "    .---.\n"
-                       + "   /     \\");
-      break;
-  case 3:
-      System.out.println("      ___________\n"
-                       + "     ||        I\n"
-                       + "     ||\n"
-                       + "     ||\n"
-                       + "     ||\n"
-                       + "     ||\n"
-                       + "     ||\n"
-                       + "    .---.\n"
-                       + "   /     \\");
-      break;
-  case 2:
-      System.out.println("\n     ||\n"
-                       + "     ||\n"
-                       + "     ||\n"
-                       + "     ||\n"
-                       + "     ||\n"
-                       + "     ||\n"
-                       + "    .---.\n"
-                       + "   /     \\");
-      break;
-  case 1:
-      System.out.println("\n\n\n\n\n\n\n    .---.\n"
-                       + "   /     \\");
-      break;
-  default :
-}
-        }
-        if (pen != 7)
-            System.out.println("You win!");
+        System.out.println("Thank you for using the Gallows!");
     }
-    
 }
