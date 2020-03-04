@@ -1,0 +1,29 @@
+package dateTime;
+
+import java.time.LocalDate;
+import java.util.Scanner;
+import java.time.temporal.ChronoUnit;
+
+/**
+ *
+ * @author Laun
+ */
+public class DateTime {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in, "Windows-1250");
+        System.out.println("Welcome. this program will tell you how many days old you are.");
+        System.out.println("Enter year of your birth:");
+        int year = Integer.parseInt(sc.nextLine());
+        System.out.println("Enter month of your birth:");
+        int month = Integer.parseInt(sc.nextLine());
+        System.out.println("Enter day of your birth:");
+        int day = Integer.parseInt(sc.nextLine());
+        LocalDate actualDate = LocalDate.now();
+        LocalDate birthDate = LocalDate.of(year, month, day);
+        System.out.println("You are " + ChronoUnit.DAYS.between(birthDate, actualDate) + " days old.");
+        System.out.println("You are " + ChronoUnit.DAYS.between(birthDate, actualDate) * 24 + " hours old.");
+        System.out.println("You are " + ChronoUnit.DAYS.between(birthDate, actualDate) * 24 * 60 + " minutes old.");
+        System.out.println("You are " + ChronoUnit.DAYS.between(birthDate, actualDate) * 24 * 60 * 60 + " seconds old.");
+    }
+}
