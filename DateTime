@@ -1,0 +1,22 @@
+package dateTime;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
+/**
+ *
+ * @author Laun
+ */
+public class DateTime {
+
+    public static void main(String[] args) {
+        LocalDateTime dateTime = LocalDateTime.now();
+        System.out.println(dateTime);
+
+        LocalDate date = LocalDate.now();
+        System.out.println(date);
+
+        LocalTime time = LocalTime.now();
+        System.out.println(time);
+    }
+}
